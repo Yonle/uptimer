@@ -27,12 +27,13 @@ parsed.forEach((i) => {
         .on("response", () => {
           int.err = null;
           int.ok = true;
+          int.lc = new Date().toUTCString();
         })
         .on("error", (e) => {
           if (int.err == e.toString()) return;
           int.ok = false;
           int.err = e.toString();
-          int.errTime = new Date().toUTCString();
+          int.lc = new Date().toUTCString();
         }),
     Number(i[1] || 1000 * 60)
   );
@@ -51,6 +52,7 @@ const server = http.createServer((req, res) => {
     if (!int.ok && !int.err)
       return res.write(" - " + "WAIT " + "| " + url + "\n");
     res.write(" - " + (int.ok ? "OK   " : "DOWN ") + "| " + url + "\n");
+    res.write("   " + "Last checked at " + int.lc);
   });
 
   if (urls.filter((i) => i.err).length)
@@ -59,7 +61,7 @@ const server = http.createServer((req, res) => {
     .filter((i) => i.err)
     .forEach((int) => {
       let url = new URL(int.url).host;
-      res.write(" - " + url + " at " + int.errTime + "\n");
+      res.write(" - " + url + " at " + int.lc + "\n");
       res.write("   " + int.err + "\n\n");
     });
   res.end();
