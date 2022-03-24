@@ -52,7 +52,7 @@ const server = http.createServer((req, res) => {
     if (!int.ok && !int.err)
       return res.write(" - " + "WAIT " + "| " + url + "\n");
     res.write(" - " + (int.ok ? "OK   " : "DOWN ") + "| " + url + "\n");
-    res.write("   " + "Last checked at " + int.lc);
+    res.write("   " + "Last checked at " + int.lc + "\n");
   });
 
   if (urls.filter((i) => i.err).length)
