@@ -1,0 +1,25 @@
+{
+  "name": "uptimer",
+  "version": "1.0.0",
+  "description": "A simple uptimer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Yonle/uptimer.git"
+  },
+  "keywords": [
+    "uptimer"
+  ],
+  "author": "Yonle <yonle@duck.com>",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/Yonle/uptimer/issues"
+  },
+  "homepage": "https://github.com/Yonle/uptimer#readme",
+  "dependencies": {
+    "miniget": "^4.2.2"
+  }
+}
