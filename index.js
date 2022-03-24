@@ -27,13 +27,13 @@ parsed.forEach((i) => {
         .on("response", () => {
           int.err = null;
           int.ok = true;
-          int.lc = new Date().toUTCString();
+          int.lc = new Date().toLocaleString('en-UK', { timeZone: 'UTC' });
         })
         .on("error", (e) => {
           if (int.err == e.toString()) return;
           int.ok = false;
           int.err = e.toString();
-          int.lc = new Date().toUTCString();
+          int.lc = new Date().toLocaleString('en-UK', { timeZone: 'UTC' });
         }),
     Number(i[1] || 1000 * 60)
   );
