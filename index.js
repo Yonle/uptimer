@@ -2,6 +2,7 @@ const http = require("http");
 const undici = require("undici");
 const fs = require("fs");
 
+const greeting = (fs.existsSync(__dirname + "/greeting.txt") ? fs.readFileSync(__dirname + "/greeting.txt", "utf8") : "Website Status") + "\n\n";
 const urls = Array();
 
 // Parse the URLS in the files
@@ -45,7 +46,7 @@ parsed.forEach((i) => {
 
 const server = http.createServer((req, res) => {
   res.writeHead(200, { "content-type": "text/plain" });
-  res.write(`Website Status\n`);
+  res.write(greeting);
   if (!urls.length)
     return res.end("This uptimer server is not configured yet.\n");
   urls.forEach((int) => {
