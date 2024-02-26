@@ -1,4 +1,4 @@
-# [url] [interval (in miliseconds)]
+# [url] [interval (in miliseconds)] (name)
 # Change the following URLs and it's interval into your desired URLs.
 
 # 1 second is 1000 miliseconds.
@@ -6,3 +6,4 @@
 # 1 hour is 3600000 miliseconds.
 
 https://example.com 60000
+https://example2.com 60000 An service

@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/Yonle/uptimer#readme",
   "dependencies": {
-    "miniget": "^4.2.2"
+    "undici": "^6.6.2"
   }
 }
