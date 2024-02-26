@@ -26,7 +26,7 @@ parsed.forEach((i) => {
               "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.0.0 Mobile Safari/537.36",
           },
         });
-        if (req.statusCode >= 400) throw `status code: ${req.statusCode}`;
+        if (req.statusCode >= 500) throw `status code: ${req.statusCode}`;
         int.err = null;
         int.ok = true;
         int.lc = new Date().toLocaleString('en-UK', { timeZone: 'UTC' });
