@@ -30,7 +30,7 @@ parsed.forEach((i) => {
         int.err = null;
         int.ok = true;
         int.lc = new Date().toLocaleString('en-UK', { timeZone: 'UTC' });
-      } catch (err) {
+      } catch (e) {
         if (int.err == e.toString()) return;
         int.ok = false;
         int.err = e.toString();
