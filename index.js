@@ -52,7 +52,7 @@ const server = http.createServer((req, res) => {
   urls.forEach((int) => {
     if (!int.ok && !int.err)
       return res.write(" - " + "WAIT " + "| " + int.name + "\n");
-    res.write(" - " + (int.ok ? "OK   " : "DOWN ") + "| " + int.name + " at " + int.lc + "\n");
+    res.write(" - " + (int.ok ? "OK   " : "DOWN ") + "| " + int.name + " | since " + int.lc + "\n");
   });
 
   if (urls.filter((i) => i.err).length)
@@ -60,7 +60,7 @@ const server = http.createServer((req, res) => {
   urls
     .filter((i) => i.err)
     .forEach((int) => {
-      res.write(" - " + int.name + " at " + int.lc + "\n");
+      res.write(" - " + int.name + " | at " + int.lc + "\n");
       res.write("   " + int.err + "\n\n");
     });
   res.end();
